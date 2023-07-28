@@ -61,6 +61,7 @@ git clone https://git-codecommit.ap-northeast-1.amazonaws.com/v1/repos/example
 
 ## 權限整理(待整理)
 get-session token
+在測試MFA NotAction時發現如果要開通Codecommit(不需要MFA)，那麼要把kms的權限加到NotAction中
 
 
 
