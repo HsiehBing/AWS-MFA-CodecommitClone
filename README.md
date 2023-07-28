@@ -1,4 +1,6 @@
-## 目的：在使用Git時往往都是使用ssh或者http上傳或下載，如果要做到縝密的資安的話可以結合MFA的驗證，透過驗證更改Access Key ID、ACCESS_KEY以及ACCESS_TOKEN等參數進一步加強資安管控。
+## 目的：
+
+在使用Git時往往都是使用ssh或者http上傳或下載，如果要做到縝密的資安的話可以結合MFA的驗證，透過驗證更改Access Key ID、ACCESS_KEY以及ACCESS_TOKEN等參數進一步加強資安管控。
 此篇就是在介紹如何使用MFA並結合git使用的簡單介紹，相關延伸也可以延伸至S3的透過MFA的管控。
 在文章中會分幾個部分，操作程序、故障排除、參考資料、以及IAM policy
 
@@ -13,7 +15,8 @@
 3.透過aws sts 指令取得access token等資訊
 ```
 aws sts get-session-token --serial-number arn:aws:iam::123456789012:mfa/example --token-code 123456
-#其中arn:aws:iam::123456789012:mfa/example 為Multi-factor authentication (MFA)的設定mfa名稱視設定時的給定而定可能會跟iam user名稱不同，這邊需要注意一下
+#其中arn:aws:iam::123456789012:mfa/example 為Multi-factor authentication (MFA)的設定
+mfa名稱視設定時的給定而定可能會跟iam user名稱不同，這邊需要注意一下
 ```
 取得的資訊格式如下：
 
